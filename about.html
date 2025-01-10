@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                // redirect back to index so we don't have to load all styles etc.. here
-                window.location.href = 'index.html';
-            });
-        </script>
         <meta charset="utf-8">
         <title>lead542 - InterAction - Tom Dodson</title>
     </head>
   <body>
+    <script>
+        var loadTime = new Date();
+        document.addEventListener('DOMContentLoaded', function () {
+            // redirect back to index so we don't have to load all styles etc.. here
+            var now = new Date();
+            if (now - loadTime < 500) {
+                console.log(window.location.href);
+                window.location.href = 'index.html';
+                return;
+            }
+            
+        });
+    </script>
     <div data-barba="wrapper">
       <div data-barba="container" data-barba-namespace="about">
         <h1>About</h1>
