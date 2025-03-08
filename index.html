@@ -42,16 +42,14 @@
                             <a class="nav-link" href="index.html" data-barba-history="replace">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html" data-barba-history="replace">about</a>
-                        </li>
-                        <!--
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
+                            <a class="nav-link" href="organization.html" data-barba-history="replace">Organization</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Disabled</a>
+                            <a class="nav-link" href="conflict.html" data-barba-history="replace">Conflict</a>
                         </li>
-                          -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="change.html" data-barba-history="replace">Change</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -112,7 +110,8 @@
                     readyForNav = false;
                     return gsap.to(data.current.container, {
                         opacity: 0,
-                        duration: .075
+                        duration: .5,
+                        transform: 'scale(0)'
                     });
                 },
                 afterLeave(data) {
@@ -123,7 +122,9 @@
                 enter(data) {
                     return gsap.from(data.next.container, {
                         opacity: 0,
-                        duration: .075
+                        duration: .5,
+                        y: 100,
+                        transform: 'scale(3)'
                     });
                 },
                 afterEnter(data) {
