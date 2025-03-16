@@ -55,84 +55,106 @@
             </nav>
         </header>
         <div data-barba="container" data-barba-namespace="home">
-            <h1>Home</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.</p>
+            <div class="row">
+                <div class="col">
+                    <h1 class="display-4 text-center">Lead 542 InterAction - Tom Dodson</h1>
+                    <p class="lead text-center">
+                        Strive not to be a success, but rather to be of value. - Albert Einstein Influential Scientist
+                    </p>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col">
+                    <div class="display-6">
+                        <h3>InterAction Plan</h3>
+                        <p>
+                            Please find in the different pages on this site various concepts showcasing artifacts from
+                            this term as I plan for my future as a technical leader within an engineering organization.
+                        </p>
+                        <p>
+                            I have recently received my M.S. in Computer Science, this shows my strength of technical knowledge.
+                            My career plan is to combine that technical strength with a MEng in Engineering Management to
+                            showcase my ability as a technical leader.
+                        </p>
+                        <p>
+                            This InterAction plan shows a few key areas I can improve and my action plan to do so.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <!-- load barba (UMD version) -->
-    <script src="https://unpkg.com/@barba/core"></script>
+        <!-- load barba (UMD version) -->
+        <script src="https://unpkg.com/@barba/core"></script>
 
-    <!-- load gsap animation library (minified version) -->
-    <script src="https://unpkg.com/gsap@latest/dist/gsap.min.js"></script>
+        <!-- load gsap animation library (minified version) -->
+        <script src="https://unpkg.com/gsap@latest/dist/gsap.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+            integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
-    <!-- init barba with a simple opacity transition -->
-    <script type="text/javascript">
-        var readyForNav = false;
-        (function ($) {
-            $(document).ready(function () {
-                readyForNav = true;
-                $('a').on('click dblclick', function (e) {
-                    if (!readyForNav) {
-                        e.preventDefault();
-                    }
-                    if (this.href === window.location.href) {
-                        e.preventDefault();
-                    }
-                    readyForNav = false;
-                });
-                
-            });
-        })(jQuery);
-        barba.init({
-            cacheIgnore: true,
-            prefetchIgnore: true,
-            preventRunning: true,
-            transitions: [{
-                name: 'opacity-transition',
-                leave(data) {
-                    readyForNav = false;
-                    return gsap.to(data.current.container, {
-                        opacity: 0,
-                        duration: .5,
-                        transform: 'scale(0)'
-                    });
-                },
-                afterLeave(data) {
-                    data.current.container.style.display = 'none';
-                    data.current.container.style.position = 'absolute';
-                    data.current.container.remove();
-                },
-                enter(data) {
-                    return gsap.from(data.next.container, {
-                        opacity: 0,
-                        duration: .5,
-                        y: 100,
-                        transform: 'scale(3)'
-                    });
-                },
-                afterEnter(data) {
+        <!-- init barba with a simple opacity transition -->
+        <script type="text/javascript">
+            var readyForNav = false;
+            (function ($) {
+                $(document).ready(function () {
                     readyForNav = true;
-                }
-            }],
-        });
-    </script>
+                    $('a').on('click dblclick', function (e) {
+                        if (!readyForNav) {
+                            e.preventDefault();
+                        }
+                        if (this.href === window.location.href) {
+                            e.preventDefault();
+                        }
+                        readyForNav = false;
+                    });
+
+                });
+            })(jQuery);
+            barba.init({
+                cacheIgnore: true,
+                prefetchIgnore: true,
+                preventRunning: true,
+                transitions: [{
+                    name: 'opacity-transition',
+                    leave(data) {
+                        readyForNav = false;
+                        return gsap.to(data.current.container, {
+                            opacity: 0,
+                            duration: .5,
+                            transform: 'scale(0)'
+                        });
+                    },
+                    afterLeave(data) {
+                        data.current.container.style.display = 'none';
+                        data.current.container.style.position = 'absolute';
+                        data.current.container.remove();
+                    },
+                    enter(data) {
+                        return gsap.from(data.next.container, {
+                            opacity: 0,
+                            duration: .5,
+                            y: 100,
+                            transform: 'scale(3)'
+                        });
+                    },
+                    afterEnter(data) {
+                        readyForNav = true;
+                    }
+                }],
+            });
+        </script>
 </body>
 
 </html>
